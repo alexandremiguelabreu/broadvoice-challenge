@@ -1,0 +1,15 @@
+meta {
+  name: fetch item
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/items/{{itemId}}
+  body: none
+  auth: inherit
+}
+
+vars:pre-request {
+  itemId: d83ce117-0ee6-48f1-8a36-c50a4fffee5c
+}

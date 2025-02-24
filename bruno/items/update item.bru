@@ -1,0 +1,24 @@
+meta {
+  name: update item
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/items/{{itemId}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "abc",
+    "status": "pending",
+    "description": null,
+    "dueDate": "2025-02-02T12:45:00Z"
+  }
+}
+
+vars:pre-request {
+  itemId: d83ce117-0ee6-48f1-8a36-c50a4fffee5c
+}

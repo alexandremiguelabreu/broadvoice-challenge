@@ -1,3 +1,5 @@
+/docker/postgresql/data
+
 # compiled output
 /dist
 /node_modules

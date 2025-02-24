@@ -1,0 +1,12 @@
+services:
+  postgres:
+    image: postgres:17
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: todo_api
+      POSTGRES_PASSWORD: passwd
+      POSTGRES_DB: todo
+    volumes:
+      - ./docker/postgresql/data/:/var/lib/postgresql/data/
+      - ./docker/postgresql/init-db/:/docker-entrypoint-initdb.d/

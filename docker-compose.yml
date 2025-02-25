@@ -10,3 +10,8 @@ services:
     volumes:
       - ./docker/postgresql/data/:/var/lib/postgresql/data/
       - ./docker/postgresql/init-db/:/docker-entrypoint-initdb.d/
+
+  redis:
+    image: redis:7
+    ports:
+      - '6379:6379'

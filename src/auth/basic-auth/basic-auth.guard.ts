@@ -12,9 +12,10 @@ export class BasicAuthGuard extends AuthGuard('basic') {
       throw new UnauthorizedException('Invalid authentication');
     }
 
-    // save user info in the request context
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
     context.switchToHttp().getRequest().user = user;
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return user;
   }
 }

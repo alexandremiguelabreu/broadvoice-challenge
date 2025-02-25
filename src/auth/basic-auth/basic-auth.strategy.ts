@@ -3,8 +3,8 @@ import { PassportStrategy } from '@nestjs/passport';
 import { Injectable } from '@nestjs/common';
 import { UserService } from '../../users/user.service';
 import * as bcrypt from 'bcrypt';
-import { UserInfo } from '../../types/user-info.type';
-import { UserRole } from '../../types/user-role.enum';
+import UserInfo from '../../types/user-info.type';
+import UserRole from '../../types/user-role.enum';
 
 @Injectable()
 export class BasicAuthStrategy extends PassportStrategy(BasicStrategy) {

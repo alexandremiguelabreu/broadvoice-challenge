@@ -107,6 +107,7 @@ _How will you ensure efficient query handling and response times, even with a la
 - [x] Use of a cache mechanism (Redis) to store the users' data for a period of time (60 seconds);
   - avoided the need to query the database for each subsequent request to the same user;
 - [x] Use of indexes in the database to speed up the queries;
+- [ ] Configure read replicas to distribute the read queries between the master and the replicas;
 
 ---
 

@@ -17,8 +17,8 @@ Available users:
 
 | Role    | User ID                              | Username | Password | # Items |
 |---------|--------------------------------------|----------|----------|---------|
-| admin   | b293d9a9-1d1a-4729-a333-ea4435620b48 | admin    | admin    | 2       |
-| regular | df960bb2-2647-4b0f-937f-ac3d26780913 | alex     | alex     | 1       |
+| admin   | b293d9a9-1d1a-4729-a333-ea4435620b48 | admin    | admin    | 1       |
+| regular | df960bb2-2647-4b0f-937f-ac3d26780913 | alex     | alex     | 2       |
 | regular | 6ec2a8d2-c75f-48d8-9a4f-2d484a4d6386 | carlos   | carlos   | 0       |
 
 ## How to run the application

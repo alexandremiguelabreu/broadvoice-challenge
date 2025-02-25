@@ -21,8 +21,8 @@ import { ThrottlerModule } from '@nestjs/throttler';
       isGlobal: true,
       useFactory: async () => {
         const _redisStore = await redisStore({
-          host: 'localhost',
-          port: 6379,
+          host: process.env.REDIS_HOST || 'localhost',
+          port: process.env.REDIS_PORT || 6379,
         });
         return {
           store: _redisStore,
@@ -31,19 +31,19 @@ import { ThrottlerModule } from '@nestjs/throttler';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'todo_api',
-      password: 'passwd',
-      database: 'todo',
+      host: process.env.POSTGRES_HOST || 'localhost',
+      port: Number(process.env.POSTGRES_PORT) || 5432,
+      username: process.env.POSTGRES_USER || 'todo_api',
+      password: process.env.POSTGRES_PASSWD || 'passwd',
+      database: process.env.POSTGRES_DB || 'todo',
       entities: [Item, User],
       poolSize: 25,
-      logging: true,
+      logging: !process.env.NODE_ENV || process.env.NODE_ENV === 'development',
       cache: {
         type: 'redis',
         options: {
-          host: 'localhost',
-          port: 6379,
+          host: process.env.REDIS_HOST || 'localhost',
+          port: process.env.REDIS_PORT || 6379,
         },
       },
     }),
